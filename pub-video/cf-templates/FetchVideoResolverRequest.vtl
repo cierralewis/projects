@@ -1,0 +1,22 @@
+#**
+The 'params' key accepts any valid Elasticsearch DSL expression.
+You must replace the <index>, <type>, and <field> placeholders with actual values.
+*#
+{
+"version":"2017-02-28",
+"operation":"GET",
+"path":"/videos/videos/_search",
+"params":{
+      "headers":{},
+      "queryString":{},
+      "body":{
+          "from":0,
+          "size":50,
+          "query":{
+              "term" :{
+                  "sourceId.keyword":"$context.arguments.sourceId"
+              }
+          }
+      }
+  }
+}

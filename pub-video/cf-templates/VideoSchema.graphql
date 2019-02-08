@@ -1,0 +1,57 @@
+type Query {
+	fetchVideo(sourceId: String): [Video]
+}
+
+type Video {
+	sourceId: ID
+	uuid: ID
+	videoId: ID
+	itemType: String
+	seriesUuid: ID
+	seasonUuid: ID
+	episodeUuid: ID
+	title: String
+	description: String
+	airDate: Float
+	categories: [String]
+	rating: String
+	subRatings: [String]
+	source: String
+	#sourceId: String!
+	shortTitle: String
+	shortDescription: String
+	dayPart: String
+	duration: Int
+	evergreen: Boolean
+	externalAdId: String
+	type: String
+	genre: [String]
+	programmingType: String
+	hasClosedCaption: Boolean
+	language: String
+	tags: String
+	creditCue: creditCue
+	upLynkLabel: String
+	organizationalTags: String
+	permalink: String
+	showInNavigation: Boolean
+	copyright: copyright
+	provider: String
+	brand: String
+	updated: Float
+}
+
+type copyright {
+	owner: String
+	year: Int
+}
+
+type creditCue {
+	enabledCreditCue: Boolean
+	startCreditCueTiming: Int
+	endCreditCueTiming: Int
+}
+
+schema {
+	query: Query
+}
